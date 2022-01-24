@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  main
+    block sideBar
+      #categoriesBar
+        ul
+          li.category-list(class=`${selected_category.name===""?"active":""}`)
+            a(href="/") 
+              h4 All Categories
+            a(href="/inventory/categories/create")
+              <i class="bi bi-plus-circle"></i>
+          each category in category_list
+            li.category-list(class=`${category.name===selected_category.name?"active":""}`)              
+              a(href=category.url)
+                h4 #{category.name}
+              a(href=`${category.url}/delete`)
+                <i class="bi bi-dash-circle"></i>
+          else
+            li There are no categories.
+    block items
+      #itemsContainer
+        .add-item
+          a(href="/inventory/items/create")
+            button.update Add an item
+        each item in items_list
+          .item-card
+            a(href=item.url) 
+              h2 #{item.name}
+            a(href=item.url) 
+              .item-img
+            p Category: #{item.category.name}
+            p #{item.description}
+            .item-info 
+              p Price: #{item.price} $
+              p Available: #{item.stock} pieces   
+
+        else
+          h1 There are no Items.

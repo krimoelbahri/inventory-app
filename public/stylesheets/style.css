@@ -1,0 +1,158 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ul,
+ol {
+	list-style: none;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+li.active {
+	background-color: white;
+	color: deeppink;
+}
+header {
+	height: 100px;
+	width: 100%;
+	background-color: #8cd0e3;
+	color: whitesmoke;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: "Acme", sans-serif;
+}
+#logo {
+	font-size: xx-large;
+}
+main {
+	background-color: #f2f7ff;
+	width: 100%;
+	padding: 15px;
+	height: calc(100% - 100px);
+	position: relative;
+	top: 100px;
+	display: flex;
+	flex-direction: row;
+}
+/* INDEX FILE */
+#categoriesBar {
+	width: 300px;
+	height: 100%;
+	padding: 10px;
+	overflow-x: hidden;
+}
+.category-list {
+	padding: 10px 20px;
+	font-size: large;
+	font-family: "Sedgwick Ave", cursive;
+	display: flex;
+	justify-content: space-between;
+}
+.category-list i {
+	cursor: pointer;
+}
+#itemsContainer {
+	width: calc(100% - 300px);
+	font-family: "Sedgwick Ave", cursive;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.add-item {
+	width: 100%;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.item-card {
+	width: calc(33% - 4px);
+	height: 400px;
+	margin: 2px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+@media (max-width: 950px) {
+	.item-card {
+		width: calc(50% - 4px);
+	}
+}
+@media (max-width: 650px) {
+	.item-card {
+		width: calc(100% - 4px);
+	}
+}
+.item-card p {
+	font-size: 13px;
+}
+.item-card a:last-of-type {
+	width: 90%;
+	height: 50%;
+}
+.item-img {
+	width: 100%;
+	height: 100%;
+}
+/* ITEM FILE*/
+#itemPicture {
+	width: 50%;
+	height: 80%;
+	align-self: center;
+}
+#itemPicture a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#itemPicture img {
+	width: 80%;
+	height: 100%;
+}
+
+#itemDescription {
+	width: 50%;
+	height: 70%;
+	font-family: "Sedgwick Ave", cursive;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+#itemDescription .item-div {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+button {
+	padding: 10px;
+	font: inherit;
+	border: 1px solid;
+	border-radius: 5px;
+	cursor: pointer;
+}
+button.update {
+	color: deeppink;
+	background-color: aliceblue;
+}
+button.delete {
+	color: aliceblue;
+	background-color: red;
+}

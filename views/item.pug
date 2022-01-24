@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  main
+    block item
+      if item  
+        #itemPicture
+          a(href=item.url)
+            img(src="",alt="item")       
+        #itemDescription
+          h2 #{item.name}
+          a(href=item.category.url) 
+            p Category: #{item.category.name}
+          p #{item.description}
+          .item-div
+            p Price: #{item.price} $
+            p Available: #{item.stock} pieces
+          .item-div
+            a(href=`${item.url}/update`)
+              button.update Update item
+            a(href=`${item.url}/delete`)
+              button.delete Delete item
+      else
+        h1 Item does not exists   
