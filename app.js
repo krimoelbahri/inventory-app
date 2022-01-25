@@ -6,12 +6,12 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var inventoryRouter = require("./routes/inventory");
+require("dotenv").config();
 
 var app = express();
 
 //Set up mongoose connection
-var dev_db_url =
-	"mongodb+srv://elbahri:02091991@express-library.hkxtj.mongodb.net/local-library?retryWrites=true&w=majority";
+var dev_db_url = process.env.MONGODB_URI_DEV;
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
