@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  main
+    h1 #{title} 
+    form(action="" method="POST")
+      .form-block
+        label(for="name") Category Name
+        input(id="name" name="name" placeholder="name" type="text")
+      button.submit Create Category
+      if errors
+        each error in errors
+          p.error #{error.msg}
+    script.
+      setTimeout(() => {
+        document.querySelectorAll(".error")
+        .forEach((err => {
+          err.style.display="none"
+          }))}, 3000);  

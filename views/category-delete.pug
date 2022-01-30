@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  main
+    if items.length ===0
+      .delete-block
+        h3 Are you sure you want to delete this Category ?
+        form(action="" method="POST")
+          .form-block
+            label(for="admin") Admin password
+            input(id="admin" name="admin" type="password" required)
+          button.delete Delete Category
+          if errors
+            each error in errors
+              p.error #{error.msg}
+    else
+      .delete-block
+        h3 This category still has items delete them first.
+        each item in items
+          a(href=`${item.url}`)
+            p #{item.name}
+    script.
+      setTimeout(() => {
+        document.querySelectorAll(".error")
+        .forEach((err => {
+          err.style.display="none"
+          }))}, 3000);

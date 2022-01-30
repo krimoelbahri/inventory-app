@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 var CategorySchema = new Schema({
 	name: { type: String, required: true },
-	description: { type: String, required: true },
 });
 
 // Virtual for category's URL

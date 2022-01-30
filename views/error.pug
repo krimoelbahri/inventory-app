@@ -1,4 +1,9 @@
-block content
-  h1= message
-  h2= error.status
+extends layout
 
+block content
+  main
+    .delete-block
+      h3 OOPS! something went wrong.
+        br
+        a(href="/")
+          p Go back Home

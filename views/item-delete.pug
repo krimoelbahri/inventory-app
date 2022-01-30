@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  main
+    .delete-block
+      h3 Are you sure you want to delete #{item.name} ?
+      form(action="" method="POST")
+        .form-block
+          label(for="admin") Admin password
+          input(id="admin" name="admin" type="password" required)
+        button.delete Delete Item
+        if errors
+          each error in errors
+            p.error #{error.msg}
+  script.
+    setTimeout(() => {
+      document.querySelectorAll(".error")
+      .forEach((err => {
+        err.style.display="none"
+        }))}, 3000);
+

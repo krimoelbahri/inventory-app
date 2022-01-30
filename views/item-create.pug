@@ -2,3 +2,36 @@ extends layout
 
 block content
   main
+    h1 #{title} 
+    form(action="" method="POST")
+      .form-block
+        label(for="name") Item Name
+        input(id="name" name="name" placeholder="name" type="text" value=(item.name || "") required)
+      .form-block
+        label(for="description") Description
+        textarea(id="description" name="description" placeholder="description"  required) #{item.description || ""}
+      .form-block
+        label(for="price") Price
+        input(id="price" name="price" placeholder="price" type="number" value=(item.price || "") required)
+      .form-block
+        label(for="stock") Stock
+        input(id="stock" name="stock" placeholder="stock" type="number" value=(item.stock || "") required)
+      .form-block
+        label(for="category") Category
+        select(id="category" name="category" required)
+          each category in categories
+            option(value=`${category._id}` selected=(item && item.category.name === category.name ? true: false)) #{category.name}
+      if title==="update item"
+        .form-block
+          label(for="admin") Admin password
+          input(id="admin" name="admin" type="password" required)
+      button.submit #{title==="update item"?"Update":"Create"}
+      if errors
+        each error in errors
+          p.error #{error.msg}
+  script.
+    setTimeout(() => {
+      document.querySelectorAll(".error")
+      .forEach((err => {
+        err.style.display="none"
+        }))}, 3000);

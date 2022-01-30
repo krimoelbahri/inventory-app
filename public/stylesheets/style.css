@@ -37,6 +37,7 @@ header {
 }
 main {
 	background-color: #f2f7ff;
+	font-family: "Sedgwick Ave", cursive;
 	width: 100%;
 	padding: 15px;
 	height: calc(100% - 100px);
@@ -55,7 +56,6 @@ main {
 .category-list {
 	padding: 10px 20px;
 	font-size: large;
-	font-family: "Sedgwick Ave", cursive;
 	display: flex;
 	justify-content: space-between;
 }
@@ -146,16 +146,65 @@ main {
 }
 button {
 	padding: 10px;
+	margin: 5px;
 	font: inherit;
 	border: 1px solid;
 	border-radius: 5px;
 	cursor: pointer;
 }
-button.update {
+button.submit {
 	color: deeppink;
 	background-color: aliceblue;
 }
 button.delete {
 	color: aliceblue;
 	background-color: red;
+}
+form {
+	width: 50%;
+	padding: 15px;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+form .form-block {
+	width: 60%;
+	min-height: 55px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+form .form-block * {
+	margin: 3px 0;
+}
+form input,
+select {
+	outline: none;
+	height: 25px;
+	padding-left: 10px;
+	border: 1px solid #8cd0e3;
+	border-radius: 3px;
+	background-color: #f2f7ff;
+	font: inherit;
+}
+form textarea {
+	outline: none;
+	min-height: 70px;
+	padding: 5px 10px;
+	border: 1px solid #8cd0e3;
+	border-radius: 3px;
+	background-color: #f2f7ff;
+	font: inherit;
+}
+.delete-block {
+	width: 50%;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.delete-block * {
+	margin: 3px;
 }
